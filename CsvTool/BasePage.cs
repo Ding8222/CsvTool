@@ -75,28 +75,28 @@ namespace CsvTool
                     m_DataIndex.Add(data[i]["Index"], i);
                 }
 
-                DataListBox = new ComboBox();
-                DataListBox.ItemsSource = m_DataIndex;
-                DataListBox.SelectedValuePath = "Key";
-                DataListBox.DisplayMemberPath = "Key";
-                DataListBox.SelectedIndex = 0;
-                DataListBox.IsTextSearchEnabled = true;
-                DataListBox.IsEditable = true;
-                DataListBox.HorizontalAlignment = HorizontalAlignment.Left;
-                DataListBox.Margin = new Thickness(0, 0, 0, 0);
-                DataListBox.VerticalAlignment = VerticalAlignment.Top;
-                DataListBox.Width = 120;
-                DataListBox.Visibility = Visibility.Visible;
+                DataListBox = new ComboBox
+                {
+                    ItemsSource = m_DataIndex,
+                    SelectedValuePath = "Key",
+                    DisplayMemberPath = "Key",
+                    SelectedIndex = 0,
+                    IsTextSearchEnabled = true,
+                    IsEditable = true,
+                    HorizontalAlignment = HorizontalAlignment.Left,
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Width = 120,
+                };
                 DataListBox.SelectionChanged += new SelectionChangedEventHandler(DataListBox_SelectionChanged);
 
                 BasePanel = new StackPanel();
-                BasePanel.Margin = new Thickness(0, 0, 0, 0);
                 BasePanel.Children.Add(DataListBox);
 
-                BaseGroup = new GroupBox();
-                BaseGroup.Margin = new Thickness(0, 0, 0, 0);
-                BaseGroup.Header = csvname + "列表";
-                BaseGroup.Content = BasePanel;
+                BaseGroup = new GroupBox
+                {
+                    Header = csvname + "列表",
+                    Content = BasePanel
+                };
 
                 BaseGrid.Children.Add(BaseGroup);
                 BaseSetAllData(m_DataIndex[DataListBox.SelectedValue.ToString()]);

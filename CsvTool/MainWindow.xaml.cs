@@ -141,9 +141,11 @@ namespace CsvTool
                 m_FilePath = GetAppSetting("FilePath");
                 if (bForce || m_FilePath == "")
                 {
-                    CommonOpenFileDialog dialog = new CommonOpenFileDialog();
-                    dialog.Title = "请选择Csv配置文件所在路径";
-                    dialog.IsFolderPicker = true;
+                    CommonOpenFileDialog dialog = new CommonOpenFileDialog
+                    {
+                        Title = "请选择Csv配置文件所在路径",
+                        IsFolderPicker = true
+                    };
                     if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
                     {
                         string folderName = dialog.FileName;
@@ -274,8 +276,7 @@ namespace CsvTool
                         Dictionary<string, string> value = data.Value;
                         for (int i = 0; i < headerdata.Count; ++i)
                         {
-                            string ret;
-                            value.TryGetValue(headerdata[i], out ret);
+                            value.TryGetValue(headerdata[i], out string ret);
                             if (ret == null)
                             {
                                 return false;
@@ -374,12 +375,14 @@ namespace CsvTool
         {
             try
             {
-                InputBox input = new InputBox();
-                input.ParentWindow = this;
-                input.Title = "添加数据";
+                InputBox input = new InputBox
+                {
+                    ParentWindow = this,
+                    Title = "添加数据",
+                    ResizeMode = ResizeMode.NoResize,
+                    WindowStartupLocation = WindowStartupLocation.CenterScreen
+                };
                 input.TipsTextBlock.Text = "请出入列表序号";
-                input.ResizeMode = ResizeMode.NoResize;
-                input.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 input.ShowDialog();
             }
             catch (Exception ex)
@@ -391,7 +394,7 @@ namespace CsvTool
         /// <summary>
         /// 导航按钮
         /// </summary>
-        private void btnNav_Click(object sender, RoutedEventArgs e)
+        private void BtnNav_Click(object sender, RoutedEventArgs e)
         {
             try
             {

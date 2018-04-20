@@ -32,10 +32,10 @@
         <GroupBox x:Name="BaseGroupBox" Header="" Margin="0,25,0,0">
             <StackPanel Margin="0,0,0,0">
                 <WrapPanel Margin="0,0,0,0" Height="26" VerticalAlignment="Top">
-                    <Button x:Name="btnMonster" Tag="Monster" Click="btnNav_Click" Content="怪物" Height="26" Width="60"/>
-                    <Button x:Name="btnNPC" Tag="NPC" Click="btnNav_Click" Content="NPC"  Width="60"/>
-                    <Button x:Name="btnSkill" Tag="Skill" Click="btnNav_Click" Content="技能" Width="60"/>
-                    <Button x:Name="btnStatus" Tag="Status" Click="btnNav_Click" Content="状态"  Width="60"/>
+                    <Button x:Name="btnMonster" Tag="Monster" Click="BtnNav_Click" Content="怪物" Height="26" Width="60"/>
+                    <Button x:Name="btnNPC" Tag="NPC" Click="BtnNav_Click" Content="NPC"  Width="60"/>
+                    <Button x:Name="btnSkill" Tag="Skill" Click="BtnNav_Click" Content="技能" Width="60"/>
+                    <Button x:Name="btnStatus" Tag="Status" Click="BtnNav_Click" Content="状态"  Width="60"/>
                 </WrapPanel>
                 <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" VerticalAlignment="Stretch"  Content="Frame" Margin="0,0,0,0" Height="248"/>
             </StackPanel>
