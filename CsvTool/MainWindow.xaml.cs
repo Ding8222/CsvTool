@@ -183,7 +183,7 @@ namespace CsvTool
 
                 if (databasename == null)
                 {
-                    StreamReader sr = new StreamReader(m_FilePath + "\\" + name + ".csv", Encoding.Default);
+                    StreamReader sr = new StreamReader(m_FilePath + "\\" + name + ".csv", Encoding.UTF8);
                     try
                     {
                         var parser = new CsvParser(sr);
@@ -257,7 +257,7 @@ namespace CsvTool
             {
                 if (m_ChangeDataPageList.Find(s => s == csvname) != null) 
                 {
-                    StreamWriter sr = new StreamWriter(m_FilePath + "\\" + csvname + ".csv", false, Encoding.Default);
+                    StreamWriter sr = new StreamWriter(m_FilePath + "\\" + csvname + ".csv", false, Encoding.UTF8);
                     var csv = new CsvWriter(sr);
                     List<string> list = new List<string>();
 
