@@ -4,16 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Configuration;
 using CsvHelper;
 using Microsoft.WindowsAPICodePack.Dialogs;
@@ -61,6 +53,9 @@ namespace CsvTool
         {
             try
             {
+                if (m_CurrentPageName == name)
+                    return;
+
                 m_CurrentPageName = name;
                 BaseGroupBox.Header = "当前文件：" + name + ".csv";
                 Page con = m_PageList.Find((s) => s.Title.Equals(name));
@@ -405,6 +400,11 @@ namespace CsvTool
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void MenuItem_OpenPath_Click(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe ", m_FilePath);
         }
     }
 }

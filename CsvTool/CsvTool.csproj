@@ -77,6 +77,18 @@
     <Compile Include="InputBox.xaml.cs">
       <DependentUpon>InputBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Instance.xaml.cs">
+      <DependentUpon>Instance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InstanceMonster.xaml.cs">
+      <DependentUpon>InstanceMonster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Map.xaml.cs">
+      <DependentUpon>Map.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MapMonster.xaml.cs">
+      <DependentUpon>MapMonster.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Skill.xaml.cs">
       <DependentUpon>Skill.xaml</DependentUpon>
     </Compile>
@@ -84,6 +96,14 @@
       <DependentUpon>Status.xaml</DependentUpon>
     </Compile>
     <Page Include="InputBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Instance.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InstanceMonster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,6 +120,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Map.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MapMonster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Monster.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -28,6 +28,7 @@
             </MenuItem>
             <MenuItem Header="保存当前CSV"  InputGestureText="ctrl+s" Click="MenuItem_Save_Click" />
             <MenuItem Header="添加数据" Height="25" Click="MenuItem_AddIndex_Click"/>
+            <MenuItem Header="打开CSV目录" Height="25" Click="MenuItem_OpenPath_Click"/>
         </Menu>
         <GroupBox x:Name="BaseGroupBox" Header="" Margin="0,25,0,0">
             <StackPanel Margin="0,0,0,0">
@@ -36,6 +37,10 @@
                     <Button x:Name="btnNPC" Tag="NPC" Click="BtnNav_Click" Content="NPC"  Width="60"/>
                     <Button x:Name="btnSkill" Tag="Skill" Click="BtnNav_Click" Content="技能" Width="60"/>
                     <Button x:Name="btnStatus" Tag="Status" Click="BtnNav_Click" Content="状态"  Width="60"/>
+                    <Button x:Name="btnMap" Tag="Map" Click="BtnNav_Click" Content="地图"  Width="60"/>
+                    <Button x:Name="btnMapMonster" Tag="MapMonster" Click="BtnNav_Click" Content="地图刷怪"  Width="60"/>
+                    <Button x:Name="btnInstance" Tag="Instance" Click="BtnNav_Click" Content="副本"  Width="60"/>
+                    <Button x:Name="btnInstanceMonster" Tag="InstanceMonster" Click="BtnNav_Click" Content="副本刷怪"  Width="60"/>
                 </WrapPanel>
                 <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" VerticalAlignment="Stretch"  Content="Frame" Margin="0,0,0,0" Height="248"/>
             </StackPanel>
